@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const contentDisplay = document.getElementById('contentDisplay');
-    const jokeBtn = document.getElementById('jokeBtn');
-    const quotesBtn = document.getElementById('quotesBtn'); // Make sure this ID is correct!
+document.addEventListener("DOMContentLoaded", () => {
+    const artistBtn = document.getElementById("artistBtn");
+    const contentDisplay = document.getElementById("contentDisplay");
+    const jokeBtn = document.getElementById("jokeBtn");
+    const quotesBtn = document.getElementById("quotesBtn");
+    const happyIcon = document.getElementById("happyIcon");
+    const sadIcon = document.getElementById("sadIcon");
+    const angryIcon = document.getElementById("angryIcon");
+    const musicBtn = document.getElementById("musicBtn");
 
-    // Emoji icon elements
-    const happyIcon = document.getElementById('happyIcon');
-    const sadIcon = document.getElementById('sadIcon');
-    const angryIcon = document.getElementById('angryIcon');
+    const artists = ["Adele", "Ed Sheeran", "Coldplay", "BTS", "Taylor Swift", "Imagine Dragons", "Drake", "Billie Eilish", "Shawn Mendes", "The Weeknd"];
 
     const jokes = [
         "Why don't scientists trust atoms? Because they make up everything!",
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "What do you call a boomerang that doesn't come back? A stick!"
     ];
 
-    const quotes = [  
+    const quotes = [
         "Your heart is the size of an ocean. Go find yourself in its hidden depths. - Rumi",
         "Thinking is the capital, Enterprise is the way, Hard Work is the solution. - Abdul Kalam",
         "If You Can’t Make It Good, At Least Make It Look Good. - Bill Gates",
@@ -35,28 +37,73 @@ document.addEventListener('DOMContentLoaded', () => {
         return array[Math.floor(Math.random() * array.length)];
     }
 
-    // Joke Button Event Listener
-    jokeBtn.addEventListener('click', () => {
-        const joke = getRandomItem(jokes);
-        contentDisplay.innerHTML = `<p>${joke}</p>`;
+    if (jokeBtn && contentDisplay) {
+        jokeBtn.addEventListener("click", () => {
+            contentDisplay.innerHTML = `<p>${getRandomItem(jokes)}</p>`;
+        });
+    }
+
+    if (quotesBtn && contentDisplay) {
+        quotesBtn.addEventListener("click", () => {
+            contentDisplay.innerHTML = `<p>${getRandomItem(quotes)}</p>`;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const musicBtn = document.getElementById("musicBtn");
+        const contentDisplay = document.getElementById("contentDisplay");
+
+        const artists = ["Adele", "Ed Sheeran", "Coldplay", "BTS", "Taylor Swift", "Imagine Dragons", "Drake", "Billie Eilish", "Shawn Mendes", "The Weeknd"];
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        if (musicBtn && contentDisplay) {
+            musicBtn.addEventListener("click", async () => {
+                const artistName = getRandomItem(artists);
+                contentDisplay.innerHTML = `<p>Fetching song for ${artistName}...</p>`;
+
+                try {
+                    const response = await fetch(`http://localhost:3000/artist/${artistName}`);
+                    const artistData = await response.json();
+
+                    if (artistData && artistData.url) {
+                        contentDisplay.innerHTML = `
+                            <h2>Now Playing: ${artistName}</h2>
+                            <p><a href="${artistData.url}" target="_blank">More about ${artistName}</a></p>
+                            <audio controls autoplay>
+                                <source src="${artistData.url}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        `;
+                    } else {
+                        contentDisplay.innerHTML = `<p>No song available for ${artistName}.</p>`;
+                    }
+                } catch (error) {
+                    console.error("Error fetching song:", error);
+                    contentDisplay.innerHTML = "<p>Error playing song. Try again later.</p>";
+                }
+            });
+        }
     });
 
-    // **Quotes Button Event Listener (this was missing!)**
-    quotesBtn.addEventListener('click', () => {
-        const quote = getRandomItem(quotes);
-        contentDisplay.innerHTML = `<p>${quote}</p>`;
-    });
 
-    // Emoji Icon Event Listeners
-    happyIcon.addEventListener('click', () => {
-        contentDisplay.innerHTML = `<h2>Happy Mood 😀</h2><p>Keep spreading positivity and joy!</p>`;
-    });
+    if (happyIcon && contentDisplay) {
+        happyIcon.addEventListener("click", () => {
+            contentDisplay.innerHTML = `<h2>Happy Mood 😀</h2><p>Keep spreading positivity and joy!</p>`;
+        });
+    }
 
-    sadIcon.addEventListener('click', () => {
-        contentDisplay.innerHTML = `<h2>Feeling Down 😢</h2><p>It's okay to not be okay. Take care of yourself.</p>`;
-    });
+    if (sadIcon && contentDisplay) {
+        sadIcon.addEventListener("click", () => {
+            contentDisplay.innerHTML = `<h2>Feeling Down 😢</h2><p>It's okay to not be okay. Take care of yourself.</p>`;
+        });
+    }
 
-    angryIcon.addEventListener('click', () => {
-        contentDisplay.innerHTML = `<h2>Angry Moments 😠</h2><p>Take a deep breath. This too shall pass.</p>`;
-    });
+    if (angryIcon && contentDisplay) {
+        angryIcon.addEventListener("click", () => {
+            contentDisplay.innerHTML = `<h2>Angry Moments 😠</h2><p>Take a deep breath. This too shall pass.</p>`;
+        });
+    }
 });
