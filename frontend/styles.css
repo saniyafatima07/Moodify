@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            box-shadow: #b4bdd6;
+            border: #fff;
         }
 
         body {
@@ -20,11 +22,8 @@
             color: #fff;
             overflow: hidden;
             perspective: 1000px;
-            
-                font-size: 28px; /* Increase overall font size */
-                font-family: Arial, sans-serif; /* Change font style */
-        
-            
+            font-size: 28px;
+            font-family: 'Nunito', Arial, sans-serif;
         }
 
         .container {
@@ -35,7 +34,8 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px
+            rgba(0,0,0,0.4);
         }
 
         .header {
@@ -83,7 +83,6 @@
             background-color: rgba(0,0,0,0.3);
             margin-top: 40px;
             border-radius: 35px;
-            padding-top: 60px;
             padding: 50px;
             margin-bottom: 50px;
             justify-content: center;
@@ -91,13 +90,27 @@
             text-align: center;
         }
 
-        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .button-pair {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
         .btn {
-            flex-grow: 1;
+            flex: 1;
             padding: 15px;
             border: none;
             border-radius: 10px;
-            font-family: 'Fredoka One', cursive;
+            font-family: 'Fredoka One', 
+            cursive;
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -105,6 +118,7 @@
             color: var(--background-color);
             position: relative;
             overflow: hidden;
+            min-width: 120px;
         }
 
         .btn:hover {
@@ -112,36 +126,15 @@
             box-shadow: 0 5px 15px rgba(78,205,196,0.5);
         }
 
-        .pace {
-            display: flex;
-            flex-direction: row;
-            padding-bottom: 30px;
+        #riddleText, #answerText {
+            margin-top: 15px;
+            text-align: center;
+            width: 100%;
         }
 
-        /* #jokeButton {
-            display: flex;
-            flex-direction: row;
-        } */
-        .action-buttons {
-            display: flex;
-            flex-wrap: wrap; /* Allows wrapping */
-            justify-content: center;
-            gap: 20px; /* Space between buttons */
-            width: 100%;
+        .blurred {
+            filter: blur(5px);
+            cursor: pointer;
         }
-        
-        .hello, .hi {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between buttons */
-            width: 100%;
-        }
-        
-        /* Ensure buttons take equal space */
-        .btn {
-            flex: 1; /* Ensures equal width */
-            padding: 15px;
-            min-width: 150px; /* Prevents shrinking too much */
-            text-align: center;
-        }
-        
+
+
