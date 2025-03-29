@@ -103,6 +103,31 @@ app.get('/search/artist/:name', async (req, res) => {
     }
 });
 
+// 📌 9️⃣ Get a Random Riddle
+app.get('/riddle', async (req, res) => {
+    const apiUrl = `https://api.api-ninjas.com/v1/riddles`;
+    const apiKey = process.env.RIDDLES_API_KEY;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'X-Api-Key': apiKey,
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error fetching riddle: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        res.json(data[0]);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

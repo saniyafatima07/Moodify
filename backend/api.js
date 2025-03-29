@@ -13,5 +13,20 @@ async function fetchArtistInfo(artistName) {
     }
 }
 
-// Export function for use in script.js
-export { fetchArtistInfo };
+// 📌 Fetch Random Riddle
+async function fetchRiddle() {
+    try {
+        const response = await fetch(`${BASE_URL}/riddle`);
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching riddle:", error);
+        return null;
+    }
+}
+
+// Export new function
+export { fetchArtistInfo, fetchRiddle };
+
