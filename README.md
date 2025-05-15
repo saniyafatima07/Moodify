@@ -1,7 +1,11 @@
 
-#  Moodify – Refresh Your Mood, Boost Your Productivity!
+#  Moodify 
+**Refresh Your Mood, Boost Your Productivity!**
 
-**Moodify** is a lightweight and user-friendly Chrome browser extension built to provide quick mental refreshment during long work or study sessions. With just a click, users can access jokes, quotes, songs, and riddles — helping them reset, refocus, and return to their tasks with renewed energy.
+
+**Moodify** is a lightweight and user-friendly Chrome browser extension built to provide quick mental refreshment during long work or study sessions.
+
+With just a click, users can access jokes, quotes, songs, and riddles — helping them reset, refocus, and return to their tasks with renewed energy.
 
 ---
 
