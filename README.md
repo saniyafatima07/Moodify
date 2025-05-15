@@ -1,16 +1,16 @@
 
-# 🌈 Moodify – Refresh Your Mood, Boost Your Productivity!
+#  Moodify – Refresh Your Mood, Boost Your Productivity!
 
 **Moodify** is a lightweight and user-friendly Chrome browser extension built to provide quick mental refreshment during long work or study sessions. With just a click, users can access jokes, quotes, songs, and riddles — helping them reset, refocus, and return to their tasks with renewed energy.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🎵 **Songs**: Listen to calming or energizing tunes.
-- 💬 **Quotes**: Get inspired with motivational quotes.
-- 😂 **Jokes**: Take a laughter break with fun jokes.
-- 🧠 **Riddles**: Challenge your brain with engaging riddles.
+-  **Songs**: Listen to calming or energizing tunes.
+-  **Quotes**: Get inspired with motivational quotes.
+-  **Jokes**: Take a laughter break with fun jokes.
+-  **Riddles**: Challenge your brain with engaging riddles.
 
 ---
 
@@ -33,7 +33,7 @@ git clone https://github.com/saniyafatima07/Moodify.git
 
 ---
 
-## 🛠️ How to Use
+##  How to Use
 
 1. Click the **Moodify** icon in your Chrome toolbar.
 2. Choose a category:
@@ -46,7 +46,7 @@ git clone https://github.com/saniyafatima07/Moodify.git
 
 ---
 
-## 👩‍💻 Built With
+##  Built With
 
 - HTML  
 - CSS  
