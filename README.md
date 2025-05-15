@@ -14,7 +14,7 @@
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### Step 1: Clone or Download the Repository
 
@@ -37,12 +37,12 @@ git clone https://github.com/saniyafatima07/Moodify.git
 
 1. Click the **Moodify** icon in your Chrome toolbar.
 2. Choose a category:
-   - 🧠 **Riddles**
-   - 🎵 **Songs**
-   - 😂 **Jokes**
-   - 💬 **Quotes**
+   -  **Riddles**
+   -  **Songs**
+   -  **Jokes**
+   -  **Quotes**
 3. Enjoy your mini-break and boost your mood!
-4. Return to your work feeling refreshed and focused. ✨
+4. Return to your work feeling refreshed and focused. 
 
 ---
 
