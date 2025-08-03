@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (riddleBtn) {
         riddleBtn.addEventListener('click', function () {
-            fetch("http://localhost:3000/riddle")
+            fetch("https://moodify-0403.onrender.com/")
                   .then(res => res.json())
                   .then(data => {
                       contentDisplay.innerHTML = `<h3>Riddle:</h3><p>${data.riddles.question}</p>`;
