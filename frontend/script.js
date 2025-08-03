@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (jokeBtn) {
         jokeBtn.addEventListener('click', function () {
              clearRiddleAnswer();
-            fetch("http://localhost:3000/joke")
+            fetch("https://moodify-0403.onrender.com/joke")
             .then(response => response.json())
             .then(data => {
                 contentDisplay.innerHTML = `<p>${data.jokes}</p>`;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (quotesBtn) {
         quotesBtn.addEventListener('click', function () {
              clearRiddleAnswer();
-           fetch("http://localhost:3000/quote")
+           fetch("https://moodify-0403.onrender.com/quote")
             .then(response => response.json())
             .then(data => {
                 contentDisplay.innerHTML = `<p>${data.quotes}</p>`;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (riddleBtn) {
         riddleBtn.addEventListener('click', function () {
-            fetch("https://moodify-0403.onrender.com/")
+            fetch("https://moodify-0403.onrender.com/riddle")
                   .then(res => res.json())
                   .then(data => {
                       contentDisplay.innerHTML = `<h3>Riddle:</h3><p>${data.riddles.question}</p>`;
